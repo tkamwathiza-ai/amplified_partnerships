@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import company_info
+from .views import submit_contact_form
 
 urlpatterns = [
-    path('info/', company_info, name='company-info'),
+    path('contact/', submit_contact_form, name='submit-contact'),
 ]
