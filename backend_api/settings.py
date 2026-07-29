@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--brnlsj&clf0k+5cruw$h(*ut*85nih)-_9ehd5l335h47@$@z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
 
 
 # Application definition
@@ -55,8 +55,12 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173", # Default Vite + React local port
-    "http://localhost:3000", # Alternative default port
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:3000",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:3000",
 ]
 
 ROOT_URLCONF = 'backend_api.urls'

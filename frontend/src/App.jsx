@@ -4,12 +4,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact'; // 1. Import the new Contact file
-
+import Footer from './pages/Footer';
 function App() {
   return (
     <div>
       <nav className="navbar">
-        <div className="nav-logo">AMPLIFY PARTNERSHIPS</div>
+        <div className="nav-logo">
+          AMPLIFY PARTNERSHIPS
+        </div>
         <div className="nav-links">
           <Link to="/" className="nav-item">Home</Link>
           <Link to="/about" className="nav-item">About Us</Link>
@@ -26,10 +28,8 @@ function App() {
           <Route path="/contact" element={<Contact />} /> {/* 3. Register Route */}
         </Routes>
       </main>
-
-      <footer style={{ backgroundColor: '#0f172a', color: '#94a3b8', textAlign: 'center', padding: '2.5rem', fontSize: '0.9rem' }}>
-        © {new Date().getFullYear()} Amplify Partnerships. Area 3, Plot 3/350, Lilongwe, Malawi.
-      </footer>
+      <Footer />
+      
     </div>
   );
 }

@@ -1,7 +1,14 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import ContactMessageSerializer
+from .serializers import ContactMessageSerializer, ServiceSerializer
+from .models import Service
+
+@api_view(['GET'])
+def get_services(request):
+    services = Service.objects.all()
+    serializer = ServiceSerializer(services, many=True)
+    return Response(serializer.data)
 
 @api_view(['POST'])
 def submit_contact_form(request):
