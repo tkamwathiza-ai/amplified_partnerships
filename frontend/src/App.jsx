@@ -5,13 +5,21 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact'; // 1. Import the new Contact file
 import Footer from './pages/Footer';
+import herologo from './pages/Amplify logo.png';
 function App() {
   return (
     <div>
       <nav className="navbar">
         <div className="nav-logo">
-          AMPLIFY PARTNERSHIPS
+          <img
+           src={herologo}
+           alt="herologo"
+           /><br></br>
         </div>
+        
+        <div className="nav-paragraph">
+          "INSIGHT-LED CONSULTING FOR RESILIENT INSTITUTIONS AND COMPANIES"
+        </div><br></br>
         <div className="nav-links">
           <Link to="/" className="nav-item">Home</Link>
           <Link to="/about" className="nav-item">About Us</Link>
