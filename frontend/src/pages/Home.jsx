@@ -1,31 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Shield, Database } from 'lucide-react';
-import heroImage from "./Meeting Office.jpg"; 
-import heroImg from "./Office Whiteboard.jpg";
-import iconImage from "./training-program.png";
-import iconimg from "./loyal-customer.png";
-import hroImage from "./Office PC Black and W.jpg";
-import hroimg from "./loyalty.png";
-import servicesImg from "./Office Partnerships.jpg";
+import heroImage from "../assets/Meeting Office.jpg"; 
+import heroImg from "../assets/Office Whiteboard.jpg";
+import iconImage from "../assets/training-program.png";
+import iconimg from "../assets/loyal-customer.png";
+import hroImage from "../assets/Office PC Black and W.jpg";
+import hroimg from "../assets/loyalty.png";
+import servicesImg from "../assets/Office Partnerships.jpg";
+
 function Home() {
   return (
-    <div className="page-container">
-
+    <div className="page-container" style={{ maxWidth: '1900px', margin: '0 auto' }}>
+      
       {/* Hero Header Section */}
-      <div style={{ padding: '4rem 0', maxWidth: '900px', margin: '0 auto' }}>
-        <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', minHeight: '500px', display: 'flex', alignItems: 'center' }}>
-          <img
-            src="/src/assets/webphoto.jpg"
-            alt="Hero"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-
-          <div style={{ position: 'relative', zIndex: 1, padding: '3rem', maxWidth: '600px', background: 'rgba(255,255,255,0.72)', /*backdropFilter: 'blur(px)',*/ margin: '2rem', borderRadius: '20px' }}>
-            <h1 className="section-title" style={{ fontSize: '3.5rem', lineHeight: '1.05', margin: 0 }}>
+      <section className="background-img" style={{ borderRadius: '20px', maxWidth: '1900px', margin: '0 auto' }}>
+         <div style={{ position: 'relative', zIndex: 1, padding: '3rem', maxWidth: '600px', background: 'rgba(255,255,255,0.72)', /*backdropFilter: 'blur(px)',*/ margin: '2rem', borderRadius: '20px' }}>
+            <h1 className="section-title" style={{ color: '#1f4dd9', fontSize: '3.5rem', lineHeight: '0.9', margin: 0 }}>
               Amplify Impact. <br />
-              <span style={{ color: '#3f72ba', fontSize: '2.5rem' }}>Optimize Institutional Performance.</span>
+              <span style={{ color: '#161515', fontSize: '2rem', display: 'inline-block', marginTop: '1rem',lineHeight: '2rem'}}>Optimize Institutional Performance.</span>
+             
             </h1>
+             
 
             <p style={{ color: '#475569', fontSize: '1.2rem', lineHeight: '1.6', margin: '1.5rem 0 2.5rem' }}>
               Providing strategic advisory, development policy alignment, and robust monitoring frameworks across sub-Saharan Africa. Based in Lilongwe, built for structural scale.
@@ -46,9 +42,9 @@ function Home() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-       
+
+      </section>
+         
       {/* Achievements and Credits Section */}
      <section className="overlay-hero">
 
@@ -171,5 +167,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;

@@ -1,25 +1,27 @@
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import Contact from './pages/Contact'; // 1. Import the new Contact file
+import Contact from './pages/Contact';
+
 import Footer from './pages/Footer';
-import herologo from './pages/Amplify logo.png';
+import herologo from './assets/Amplify logo.png';
+
 function App() {
   return (
     <div>
+      
       <nav className="navbar">
+        <div className="nav-branding">
         <div className="nav-logo">
           <img
            src={herologo}
            alt="herologo"
            /><br></br>
         </div>
-        
-        <div className="nav-paragraph">
-          "INSIGHT-LED CONSULTING FOR RESILIENT INSTITUTIONS AND COMPANIES"
-        </div><br></br>
+        <p className="nav-paragraph">Amplify Partnerships</p>
+        </div>
         <div className="nav-links">
           <Link to="/" className="nav-item">Home</Link>
           <Link to="/about" className="nav-item">About Us</Link>

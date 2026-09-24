@@ -1,4 +1,12 @@
 /* Reset basic browser settings */
+
+.page-container {
+  background:  #ffffff;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,48 +19,49 @@ body {
   line-height: 1.6; 
 }
 
-/* Reusable Container Layouts */
+
 .navbar {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url("./pages/Adobe\ Stock\ Bussiness\ WallArt.jpg");
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: space-between;/* Space between logo and links */
+  align-items: center;
+  margin: 7px 10px 0;
+  padding: 3px 20px;
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 7px;
-  margin-left: 10px;
-  margin-right: 10px;
-  box-sizing: border-box;
   border-radius: 7px;
+  box-sizing: border-box;
 }
-.nav-logo img{
-  width: 140px;
-  height: 100px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+.nav-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
 }
+.nav-logo img {
+  border-radius: 15px;
+  width: 90px;
+  height: 40px;
+  object-fit: contain; /* Prevents image distortion */
+  margin: 4px 0;
+}
+.nav-paragraph {
+  color:#1b1465ff;
+  font-weight: 900;
+  font-size: 20px;
 
-.nav-paragraph{
-  color: white;
-  font-size: 12px;
-  font-weight: 800;
-  font-style: italic;
 }
-
 .nav-links {
   display: flex;
   gap: 20px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .nav-item {
-  color: rgb(15, 163, 237);
+  color: #4873f2';
   text-decoration: none;
-  font-weight: bolder;
+  font-weight: 600;
   transition: color 0.2s ease;
 }
 
@@ -60,12 +69,14 @@ body {
   color: #ffffff;
 }
 
-/* Card layout rules for Services and Core Values */
-.page-container {
-  max-width: 1100px;
+
+/*
+.background-img {
+  max-width: 1920px;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
+   */
 
 .section-title {
   font-size: 2rem;
