@@ -87,15 +87,10 @@ function Home() {
         </div>
      </section>
 
-     {/*Mission Section*/}
-     <div className="bottom-hero">
-         <div className="img-container">
-            <img
-            src={hroImage}
-            alt="main"
-            className="main-image"
-            />
-         </div>
+     {/*Mission Section and */}
+     <section className='mission-services'>
+     <div className="bottom-left-hero">
+         
          <div className="overlay-content"></div>
          
          <img
@@ -104,7 +99,7 @@ function Home() {
          className="sub-image"
          />
         
-         <h3>THE MISSION</h3>
+         <h3>OUR MISSION</h3>
          <p>To strengthen the institutions, policies, and evidence 
           base that communities depend on by delivering rigorous, 
           context-grounded consulting that turns 
@@ -112,28 +107,8 @@ function Home() {
           into measurable impact</p>
         </div>
 
-      {/*Services Section*/}
-        <div className="services-hero">
-          <img
-          src={servicesImg}
-          alt="services"
-          />
-          <div className="overlay-content"></div>
-          
-          <h5>☏</h5>
-          <h4>OUR SERVICES</h4>
-
-          <Link to="/services">
-            <p>Explore Amplify services   ➜</p>
-          </Link>
-
-          <h6>☑</h6>
-          <p2>Our work is organised around<br></br>
-            six core cosulting practices.<br></br>
-            The first three reflect where we have the<br></br> 
-            most consistent track record.
-          </p2>
-        </div>
+      
+        </section>
   
       {/* Corporate Anchors section */}
       <div style={{ marginTop: '4rem', /*backgroundColor:'#7faddb', */paddingTop: '4rem', borderTop: '1px solid #e2e8f0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2.5rem' }}>
