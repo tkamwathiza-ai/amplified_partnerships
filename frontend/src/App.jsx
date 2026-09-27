@@ -30,6 +30,9 @@ function App() {
         </div>
       </nav>
 
+      {/*Horizontal grey line seperating the navigation bar and the hero page*/}
+      <hr style={{ border: 'none', height: '0.2px', backgroundColor: '#1a1717', width: '100%' }}/> 
+
       <main style={{ minHeight: '75vh' }}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -37,6 +40,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} /> {/* 3. Register Route */}
         </Routes>
+
       </main>
       <Footer />
       

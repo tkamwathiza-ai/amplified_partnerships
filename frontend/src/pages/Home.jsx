@@ -14,16 +14,16 @@ function Home() {
     <div className="page-container" style={{ maxWidth: '1900px', margin: '0 auto' }}>
       
       {/* Hero Header Section */}
-      <section className="background-img" style={{ borderRadius: '20px', maxWidth: '1900px', margin: '0 auto' }}>
+      <section className="background-img" style={{  maxWidth: '1900px', margin: '0 auto' }}>
          <div style={{ position: 'relative', zIndex: 1, padding: '3rem', maxWidth: '600px', background: 'rgba(255,255,255,0.72)', /*backdropFilter: 'blur(px)',*/ margin: '2rem', borderRadius: '20px' }}>
-            <h1 className="section-title" style={{ color: '#1f4dd9', fontSize: '3.5rem', lineHeight: '0.9', margin: 0 }}>
+            <h1 className="section-title" style={{ color: '#14161b', fontSize: '3.5rem', lineHeight: '0.9', margin: 0 }}>
               Amplify Impact. <br />
-              <span style={{ color: '#161515', fontSize: '2rem', display: 'inline-block', marginTop: '1rem',lineHeight: '2rem'}}>Optimize Institutional Performance.</span>
+              {/*<span style={{ color: '#14161b', fontSize: '2rem', display: 'inline-block', marginTop: '1rem',lineHeight: '2rem'}}>Optimize Institutional Performance.</span>*/}
              
             </h1>
              
 
-            <p style={{ color: '#475569', fontSize: '1.2rem', lineHeight: '1.6', margin: '1.5rem 0 2.5rem' }}>
+            <p style={{ color: '#475569', fontSize: '1.2rem', lineHeight: '1.4', margin: '1.5rem 0 2.5rem' }}>
               Providing strategic advisory, development policy alignment, and robust monitoring frameworks across sub-Saharan Africa. Based in Lilongwe, built for structural scale.
             </p>
 
@@ -35,7 +35,7 @@ function Home() {
                 </span>
               </Link>
 
-              <span style={{ marginTop: '0.8rem', backgroundColor: '#3b6da0',  borderRadius: '6px', padding: '0.75rem 1.5rem', cursor: 'pointer' }}>
+              <span style={{ marginTop: '0.8rem', backgroundColor: '#1f4dd9',  borderRadius: '6px', padding: '0.75rem 1.5rem', cursor: 'pointer' }}>
                 <Link to="/contact" style={{ color: '#ffffff', textDecoration: 'none', fontWeight: '600' }}>
                   Request Diagnostics
                 </Link>
@@ -51,11 +51,7 @@ function Home() {
       {/*Left Side*/}
        <div className="hero-left">
           <div className="photo-container">
-          <img 
-             src={heroImage}
-             alt="Overlayhero" 
-             className="big-image"
-          /> 
+         
           <div className="overlay-content"></div>
 
           <img 
@@ -73,11 +69,7 @@ function Home() {
        {/*Right Side*/}
         <div className="hero-right">
          < div className="image-container">
-            <img 
-            src={heroImg}
-            alt="Overlayhero"
-            className="big-image"
-         /> 
+            
          <div className="overlay-content"></div>
 
           <img
