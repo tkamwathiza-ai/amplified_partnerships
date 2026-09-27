@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Shield, Database } from 'lucide-react';
-import heroImage from "../assets/Meeting Office.jpg"; 
-import heroImg from "../assets/Office Whiteboard.jpg";
+
 import iconImage from "../assets/training-program.png";
 import iconimg from "../assets/loyal-customer.png";
-import hroImage from "../assets/Office PC Black and W.jpg";
 import hroimg from "../assets/loyalty.png";
-import servicesImg from "../assets/Office Partnerships.jpg";
+import happy_children from "../assets/happy_children.jpg";
+
 
 function Home() {
   return (
@@ -109,28 +108,14 @@ function Home() {
 
       
         </section>
-  
-      {/* Corporate Anchors section */}
-      <div style={{ marginTop: '4rem', /*backgroundColor:'#7faddb', */paddingTop: '4rem', borderTop: '1px solid #e2e8f0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2.5rem' }}>
-        <div style={{ textAlign: 'center' }}>
-          <Globe style={{ color: '#0f172a', marginBottom: '0.75rem' }} size={24} />
-          <h4 style={{ fontWeight: '600', color: '#0f172a', marginBottom: '0.5rem' }}>Regional Context</h4>
-          <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: '1.5' }}>Grounded in local insights to meet global compliance criteria.</p>
-        </div>
+        <section className='focal-image'>
+          <img
+          src={happy_children}
+          alt="happy_children"
+          />
+                    
+        </section>
 
-         <div style={{ textAlign: 'center' }}>
-          <Database style={{ color: '#c0cce9', marginBottom: '0.75rem' }} size={24} />
-          <h4 style={{ fontWeight: '600', color: '#0f172a', marginBottom: '0.5rem' }}>Rigorous MEAL</h4>
-          <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: '1.5' }}>Precision analytics and metrics replacing generalized assessments.</p>
-        </div>
-
-        <div style={{ textAlign: 'center' }}>
-          <Shield style={{ color: '#0f172a', marginBottom: '0.75rem' }} size={24} />
-          <h4 style={{ fontWeight: '600', color: '#111214', marginBottom: '0.5rem' }}>Institutional Integrity</h4>
-          <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: '1.5' }}>Building transparent, accountable structures for long-term support.</p>
-        </div>
-
-      </div>
     </div>
   );
 }
