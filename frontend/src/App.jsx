@@ -23,10 +23,10 @@ function App() {
         <p className="nav-paragraph">Amplify Partnerships</p>
         </div>
         <div className="nav-links">
-          <Link to="/" className="nav-item">Home</Link>
-          <Link to="/about" className="nav-item">About Us</Link>
-          <Link to="/services" className="nav-item">Services</Link>
-          <Link to="/contact" className="nav-item">Contact</Link> {/* 2. Add Nav Link */}
+          <button className="nav-button"><Link to="/" className="nav-item">Home</Link></button>
+          <button className="nav-button"><Link to="/about" className="nav-item">About Us</Link></button>
+          <button className="nav-button"><Link to="/services" className="nav-item">Services</Link></button>
+          <button className="nav-button"><Link to="/contact" className="nav-item">Contact</Link></button>
         </div>
       </nav>
 

@@ -10,11 +10,13 @@ import happy_children from "../assets/happy_children.jpg";
 
 function Home() {
   return (
-    <div className="page-container" style={{ maxWidth: '1900px', margin: '0 auto' }}>
+    <div className="page-container" style={{ maxWidth: '1920px', margin: '0 auto' }}>
       
       {/* Hero Header Section */}
       <section className="background-img" style={{  maxWidth: '1900px', margin: '0 auto' }}>
-         <div style={{ position: 'relative', zIndex: 1, padding: '3rem', maxWidth: '600px', background: 'rgba(255,255,255,0.72)', /*backdropFilter: 'blur(px)',*/ margin: '2rem', borderRadius: '20px' }}>
+       
+
+         <div style={{ position: 'relative', zIndex: 1, padding: '3rem', maxWidth: '600px',  /*backdropFilter: 'blur(px)',*/ margin: '2rem', borderRadius: '20px' }}>
             <h1 className="section-title" style={{ color: '#14161b', fontSize: '3.5rem', lineHeight: '0.9', margin: 0 }}>
               Amplify Impact. <br />
               {/*<span style={{ color: '#14161b', fontSize: '2rem', display: 'inline-block', marginTop: '1rem',lineHeight: '2rem'}}>Optimize Institutional Performance.</span>*/}
