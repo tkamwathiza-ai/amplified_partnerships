@@ -1,61 +1,124 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-// Crucial: Import the icons object so we can look up names like 'activity' dynamically
-import * as Icons from 'lucide-react';
+import React from 'react';
 
 function Services() {
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  // Fetch the data from your Django API as soon as the page loads
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/api/services/');
-        setServices(response.data);
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching services layout:", err);
-        setError("Could not load consulting practices. Please verify your backend server is running.");
-        setLoading(false);
-      }
-    };
-
-    fetchServices();
-  }, []);
-
-  if (loading) return <div className="page-container">Loading corporate framework...</div>;
-  if (error) return <div className="page-container" style={{ color: '#dc2626' }}>{error}</div>;
-
   return (
-    <div className="page-container">
-      <h1 className="section-title">Our Services</h1>
-      <p style={{ color: '#475569', marginBottom: '3rem', maxWidth: '700px', fontSize: '1.1rem', lineHeight: '1.6' }}>
-        Amplify Partnerships provides high-impact advisory, institutional diagnostics, and robust technical support tailored across sub-Saharan development frameworks.
-      </p>
+    <div
+      style={{
+        padding: '4rem 2rem',
+        maxWidth: '800px',
+        margin: '0 auto',
+        lineHeight: '1.7',
+      }}
+    >
+      {/* Page Header */}
+      <div style={{ marginBottom: '3rem' }}>
+        <h2
+          style={{
+            fontSize: '2.2rem',
+            color: '#0f172a',
+            marginBottom: '0.5rem',
+          }}
+        >
+          Services We Offer
+        </h2>
 
-      {/* 1. Using our optimized clean CSS grid container class */}
-      <div className="services-grid">
-        {services.map((service) => {
-          // Dynamically map the string from the DB (like 'activity') to a real component
-          const IconComponent = Icons[service.icon_name] || Icons.Briefcase;
+        <p style={{ fontSize: '1.1rem', color: '#475569' }}>
+          Our work is organised around six core consulting practices, combining
+          deep sector experience with flexible capabilities that respond to
+          client needs across different contexts.
+        </p>
+      </div>
 
-          return (
-            /* 2. Swapping raw inline styles out for our high-impact hover class */
-            <div key={service.id} className="service-card">
-              <div style={{ color: '#0f172a', marginBottom: '1.25rem' }}>
-                <IconComponent size={32} strokeWidth={1.5} />
-              </div>
-              <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0f172a', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>
-                {service.title}
-              </h3>
-              <p style={{ color: '#475569', lineHeight: '1.6', fontSize: '0.98rem' }}>
-                {service.description}
-              </p>
-            </div>
-          );
-        })}
+      {/* Service 1 */}
+      <div style={{ marginBottom: '2.5rem' }}>
+        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+          1. Health & Social Development Policy
+        </h3>
+
+        <p>
+          Development, review, and strengthening of health policies and
+          strategies, youth and adolescent health strategies, and institutional
+          health policies for organisations, government bodies, and civil
+          society networks. Our work includes evidence synthesis, stakeholder
+          validation, gender-transformative analysis, and monitoring and
+          evaluation framework design.
+        </p>
+      </div>
+
+      {/* Service 2 */}
+      <div style={{ marginBottom: '2.5rem' }}>
+        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+          2. Monitoring, Evaluation, Accountability & Learning (MEAL)
+        </h3>
+
+        <p>
+          Design and implementation of baseline, midline, and endline studies;
+          Knowledge, Attitudes and Practices (KAP) research; programme
+          evaluations against OECD-DAC criteria; Theory of Change development;
+          and indicator frameworks. We combine quantitative survey design with
+          qualitative methods including key informant interviews, focus group
+          discussions, and community mapping.
+        </p>
+      </div>
+
+      {/* Service 3 */}
+      <div style={{ marginBottom: '2.5rem' }}>
+        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+          3. Government & Institutional Advisory
+        </h3>
+
+        <p>
+          Delivery of commissioned consultancies for government ministries and
+          departments, including sector devolution planning, digital and mobile
+          platform strategy, and national quality management system reviews. We
+          combine technical expertise with an understanding of public-sector
+          processes and stakeholder engagement.
+        </p>
+      </div>
+
+      {/* Service 4 */}
+      <div style={{ marginBottom: '2.5rem' }}>
+        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+          4. Advocacy & Strategic Communication
+        </h3>
+
+        <p>
+          Development of evidence-based advocacy and influencing strategies
+          for civil society coalitions and rights-based programmes. This
+          includes political economy and stakeholder power analysis, budget
+          advocacy planning, and capacity-building for effective advocacy
+          delivery.
+        </p>
+      </div>
+
+      {/* Service 5 */}
+      <div style={{ marginBottom: '2.5rem' }}>
+        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+          5. Research, Data & Evidence Generation
+        </h3>
+
+        <p>
+          End-to-end research services, from study design and tool development
+          through field data collection, data management and quality assurance,
+          to analysis and report writing. We help organisations generate
+          credible evidence to guide decisions and meet donor reporting
+          requirements.
+        </p>
+      </div>
+
+      {/* Service 6 */}
+      <div style={{ marginBottom: '2.5rem' }}>
+        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+          6. Institutional Strengthening & Strategic Planning
+        </h3>
+
+        <p>
+          Support for organisations seeking to strengthen their internal
+          systems, strategic plans, governance and safeguarding policies,
+          proposal and business development capacity, and team structures. Our
+          approach helps organisations build solid institutional foundations
+          for sustainable growth.
+        </p>
       </div>
     </div>
   );
