@@ -8,8 +8,8 @@ function Footer() {
         bkzikomakuka@gmail.com
         </a>
         </p>
-        <p>Phone: <a href="tel:+265997500320" style={{ fontFamily:'sans-serif',color: '#ffffff', textDecoration: 'none' }}>
-          +265 997 500 320
+        <p>Phone: <a href="tel:+265 884 042 225" style={{ fontFamily:'sans-serif',color: '#ffffff', textDecoration: 'none' }}>
+          +265 884 042 225
         </a>
         </p>
         <p style={{ color: '#ffffff', textDecoration: 'none', paddingLeft: '55px' }}>Lilongwe, Area 3</p>

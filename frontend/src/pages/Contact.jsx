@@ -358,7 +358,7 @@ function Contact() {
           <button
             type="submit"
             style={{
-              backgroundColor: '#0f172a',
+              backgroundColor: '#1f4dd9',
               color: 'white',
               padding: '0.9rem 1.5rem',
               border: 'none',

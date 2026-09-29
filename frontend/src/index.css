@@ -70,9 +70,10 @@ body {
 
 .nav-button {
   background-color: #818d8c;
-  border-color:#818d8c;
+  border:none;
   border-radius: 7px;
-  height: 25px;
+  transition: box-shadow 0.3s ease;
+  height: 30px;
   width:70px
 
 
@@ -80,11 +81,15 @@ body {
 .nav-button:hover {
   background-color:  #1f4dd9;
   border-color: #1f4dd9;
-
-  
+  box-shadow: 0 8px 20px #1f4dd9 ;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
+.nav-button:active {
+  transform: scale(1.08);
 
+}
 /*
 .background-img {
   max-width: 1920px;
