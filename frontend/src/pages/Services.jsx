@@ -1,37 +1,27 @@
 import React from 'react';
+import '../Services.css';
 
 function Services() {
   return (
-    <div
-      style={{
-        padding: '4rem 2rem',
-        maxWidth: '800px',
-        margin: '0 auto',
-        lineHeight: '1.7',
-      }}
-    >
+    <div className="services">
+
       {/* Page Header */}
-      <div style={{ marginBottom: '3rem' }}>
-        <h2
-          style={{
-            fontSize: '2.2rem',
-            color: '#0f172a',
-            marginBottom: '0.5rem',
-          }}
-        >
+      <div className="services-header">
+        <h2>
           Services We Offer
         </h2>
 
-        <p style={{ fontSize: '1.1rem', color: '#475569' }}>
-          Our work is organised around six core consulting practices, combining
-          deep sector experience with flexible capabilities that respond to
-          client needs across different contexts.
+        <p className="services-intro">
+          Our work is organised around <b>six</b> core consulting practices,
+          combining deep sector experience with flexible capabilities that
+          respond to client needs across different contexts.
         </p>
       </div>
 
+
       {/* Service 1 */}
-      <div style={{ marginBottom: '2.5rem' }}>
-        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+      <div className="service-item">
+        <h3>
           1. Health & Social Development Policy
         </h3>
 
@@ -45,9 +35,10 @@ function Services() {
         </p>
       </div>
 
+
       {/* Service 2 */}
-      <div style={{ marginBottom: '2.5rem' }}>
-        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+      <div className="service-item">
+        <h3>
           2. Monitoring, Evaluation, Accountability & Learning (MEAL)
         </h3>
 
@@ -61,24 +52,26 @@ function Services() {
         </p>
       </div>
 
+
       {/* Service 3 */}
-      <div style={{ marginBottom: '2.5rem' }}>
-        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+      <div className="service-item">
+        <h3>
           3. Government & Institutional Advisory
         </h3>
 
         <p>
           Delivery of commissioned consultancies for government ministries and
           departments, including sector devolution planning, digital and mobile
-          platform strategy, and national quality management system reviews. We
-          combine technical expertise with an understanding of public-sector
+          platform strategy, and national quality management system reviews.
+          We combine technical expertise with an understanding of public-sector
           processes and stakeholder engagement.
         </p>
       </div>
 
+
       {/* Service 4 */}
-      <div style={{ marginBottom: '2.5rem' }}>
-        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+      <div className="service-item">
+        <h3>
           4. Advocacy & Strategic Communication
         </h3>
 
@@ -91,9 +84,10 @@ function Services() {
         </p>
       </div>
 
+
       {/* Service 5 */}
-      <div style={{ marginBottom: '2.5rem' }}>
-        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+      <div className="service-item">
+        <h3>
           5. Research, Data & Evidence Generation
         </h3>
 
@@ -106,9 +100,10 @@ function Services() {
         </p>
       </div>
 
+
       {/* Service 6 */}
-      <div style={{ marginBottom: '2.5rem' }}>
-        <h3 style={{ color: '#1e40af', marginBottom: '0.7rem' }}>
+      <div className="service-item">
+        <h3>
           6. Institutional Strengthening & Strategic Planning
         </h3>
 
@@ -120,6 +115,7 @@ function Services() {
           for sustainable growth.
         </p>
       </div>
+
     </div>
   );
 }

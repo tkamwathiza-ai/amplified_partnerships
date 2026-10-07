@@ -1,5 +1,7 @@
+
 import axios from 'axios';
 import React, { useState } from 'react';
+import '../Contact.css';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -53,33 +55,15 @@ function Contact() {
   };
 
   return (
-    <div
-      className="page-container"
-      style={{
-        maxWidth: '900px',
-        margin: '0 auto',
-        padding: '4rem 2rem',
-      }}
-    >
+    <div className="contact-page-container">
+
       {/* Page Introduction */}
-      <div style={{ marginBottom: '2.5rem' }}>
-        <h1
-          className="section-title"
-          style={{
-            color: '#0f172a',
-            marginBottom: '1rem',
-          }}
-        >
+      <div className="contact-introduction">
+        <h1 className="section-title">
           Contact Our Consulting Team
         </h1>
 
-        <p
-          style={{
-            color: '#475569',
-            fontSize: '1.05rem',
-            lineHeight: '1.7',
-          }}
-        >
+        <p className="contact-intro-text">
           Have a project, research assignment, evaluation, policy need, or
           institutional challenge? Tell us about your requirements and our
           team will get in touch with you.
@@ -87,17 +71,10 @@ function Contact() {
       </div>
 
       {submitted ? (
+
         /* Success Message */
-        <div
-          style={{
-            backgroundColor: '#d1fae5',
-            color: '#065f46',
-            padding: '2rem',
-            borderRadius: '10px',
-            lineHeight: '1.6',
-          }}
-        >
-          <h2 style={{ marginBottom: '0.5rem' }}>
+        <div className="success-message">
+          <h2>
             Thank you for your enquiry.
           </h2>
 
@@ -106,26 +83,18 @@ function Contact() {
             your requirements and contact you shortly.
           </p>
         </div>
+
       ) : (
+
         /* Contact Form */
         <form
           onSubmit={handleSubmit}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1.5rem',
-          }}
+          className="contact-form"
         >
+
           {/* Full Name */}
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: '#0f172a',
-              }}
-            >
+          <div className="form-group">
+            <label>
               Full Name *
             </label>
 
@@ -136,26 +105,12 @@ function Contact() {
               onChange={handleChange}
               required
               placeholder="Enter your full name"
-              style={{
-                width: '100%',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: '1px solid #cbd5e1',
-                fontSize: '1rem',
-              }}
             />
           </div>
 
           {/* Organisation */}
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: '#0f172a',
-              }}
-            >
+          <div className="form-group">
+            <label>
               Organisation / Institution *
             </label>
 
@@ -166,26 +121,12 @@ function Contact() {
               onChange={handleChange}
               required
               placeholder="Enter your organisation or institution"
-              style={{
-                width: '100%',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: '1px solid #cbd5e1',
-                fontSize: '1rem',
-              }}
             />
           </div>
 
           {/* Email */}
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: '#0f172a',
-              }}
-            >
+          <div className="form-group">
+            <label>
               Email Address *
             </label>
 
@@ -196,26 +137,12 @@ function Contact() {
               onChange={handleChange}
               required
               placeholder="name@example.com"
-              style={{
-                width: '100%',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: '1px solid #cbd5e1',
-                fontSize: '1rem',
-              }}
             />
           </div>
 
           {/* Phone */}
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: '#0f172a',
-              }}
-            >
+          <div className="form-group">
+            <label>
               Phone Number
             </label>
 
@@ -225,26 +152,12 @@ function Contact() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+265 ..."
-              style={{
-                width: '100%',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: '1px solid #cbd5e1',
-                fontSize: '1rem',
-              }}
             />
           </div>
 
           {/* Service */}
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: '#0f172a',
-              }}
-            >
+          <div className="form-group">
+            <label>
               Service Required *
             </label>
 
@@ -253,16 +166,10 @@ function Contact() {
               value={formData.service}
               onChange={handleChange}
               required
-              style={{
-                width: '100%',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: '1px solid #cbd5e1',
-                fontSize: '1rem',
-                backgroundColor: 'white',
-              }}
             >
-              <option value="">Select a service</option>
+              <option value="">
+                Select a service
+              </option>
 
               <option value="Health & Social Development Policy">
                 Health & Social Development Policy
@@ -295,44 +202,23 @@ function Contact() {
           </div>
 
           {/* Project Title */}
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: '#0f172a',
-              }}
-            >
+          <div className="form-group">
+            <label>
               Project / Assignment Title
             </label>
 
             <input
-                type="text"
-                name="project_title"
-                value={formData.project_title}
-                onChange={handleChange}
-                placeholder="e.g. Programme Evaluation"
-                style={{
-                width: '100%',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: '1px solid #cbd5e1',
-                fontSize: '1rem',
-              }}
+              type="text"
+              name="project_title"
+              value={formData.project_title}
+              onChange={handleChange}
+              placeholder="e.g. Programme Evaluation"
             />
           </div>
 
           {/* Message */}
-          <div>
-            <label
-              style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: '#0f172a',
-              }}
-            >
+          <div className="form-group">
+            <label>
               Tell us about your project or requirements *
             </label>
 
@@ -343,33 +229,17 @@ function Contact() {
               onChange={handleChange}
               required
               placeholder="Briefly describe your project, requirements, objectives, or the support you are looking for."
-              style={{
-                width: '100%',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: '1px solid #cbd5e1',
-                fontSize: '1rem',
-                resize: 'vertical',
-              }}
             />
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            style={{
-              backgroundColor: '#1f4dd9',
-              color: 'white',
-              padding: '0.9rem 1.5rem',
-              border: 'none',
-              borderRadius: '6px',
-              fontSize: '1rem',
-              fontWeight: '600',
-              cursor: 'pointer',
-            }}
+            className="submit-button"
           >
             Submit Enquiry
           </button>
+
         </form>
       )}
     </div>
@@ -377,3 +247,4 @@ function Contact() {
 }
 
 export default Contact;
+

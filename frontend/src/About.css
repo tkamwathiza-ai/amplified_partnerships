@@ -1,0 +1,62 @@
+.about {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ABOUT TITLE
+   ========================================================= */
+
+.about-title {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+
+/* =========================================================
+   ABOUT SUBTITLE
+   ========================================================= */
+
+.about-subtitle {
+  font-size: 1.3rem;
+  color: #1e40af;
+  margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   ABOUT PARAGRAPHS
+   ========================================================= */
+
+.about p {
+  margin-bottom: 1.5rem;
+  color: #414d5f;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .about p {
+    font-size: 0.98rem;
+  }
+}

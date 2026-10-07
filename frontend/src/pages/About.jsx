@@ -1,32 +1,16 @@
+
 import React from 'react';
+import '../About.css';
 
 function About() {
   return (
-    <div
-      style={{
-        padding: '4rem 2rem',
-        maxWidth: '800px',
-        margin: '0 auto',
-        lineHeight: '1.7',
-      }}
-    >
-      <h2
-        style={{
-          fontSize: '2.2rem',
-          color: '#0f172a',
-          marginBottom: '0.5rem',
-        }}
-      >
+    <div className="about">
+
+      <h2 className="about-title">
         Our History & Background
       </h2>
 
-      <h3
-        style={{
-          fontSize: '1.3rem',
-          color: '#1e40af',
-          marginBottom: '2rem',
-        }}
-      >
+      <h3 className="about-subtitle">
         Built on Experience. Driven by Impact.
       </h3>
 
@@ -66,8 +50,11 @@ function About() {
         beginnings: delivering practical, evidence-based solutions that create
         meaningful impact at every level of the development system.
       </p>
+
     </div>
   );
 }
 
 export default About;
+
+

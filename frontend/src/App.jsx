@@ -15,23 +15,28 @@ function App() {
       <nav className="navbar">
         <div className="nav-branding">
         <div className="nav-logo">
+          <Link to="/" className="nav-item">
           <img
            src={herologo}
            alt="herologo"
-           /><br></br>
+           />
+           </Link>
+           <br></br>
+          
+          
         </div>
         <p className="nav-paragraph">Amplify Partnerships</p>
         </div>
         <div className="nav-links">
-          <button className="nav-button"><Link to="/" className="nav-item">Home</Link></button>
-          <button className="nav-button"><Link to="/about" className="nav-item">About Us</Link></button>
-          <button className="nav-button"><Link to="/services" className="nav-item">Services</Link></button>
-          <button className="nav-button"><Link to="/contact" className="nav-item">Contact</Link></button>
+          
+          <button className="nav-button"><Link to="/about" className="nav-item">Who we are</Link></button>
+          <button className="nav-button"><Link to="/services" className="nav-item">Sectors</Link></button>
+          <button className="nav-button"><Link to="/contact" className="nav-item">Work with us</Link></button>
         </div>
       </nav>
 
       {/*Horizontal grey line seperating the navigation bar and the hero page*/}
-      <hr style={{ border: 'none', height: '0.2px', backgroundColor: '#1a1717', width: '100%' }}/> 
+     {/*  <hr style={{ border: 'none', height: '0.2px', backgroundColor: '#1a1717', width: '100%' }}/>  */} 
 
       <main style={{ minHeight: '75vh' }}>
         <Routes>
