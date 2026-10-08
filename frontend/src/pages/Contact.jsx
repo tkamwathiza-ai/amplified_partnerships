@@ -1,7 +1,17 @@
-
 import axios from 'axios';
 import React, { useState } from 'react';
 import '../Contact.css';
+
+/*
+ * API address.
+ * - Set VITE_API_URL in a .env file to override it (for production).
+ * - Otherwise it uses the same host the website was opened from, on port 8001.
+ *   That means it works on your laptop (localhost) and on your phone
+ *   (your computer's network address) without any changes.
+ */
+const API_BASE =
+  import.meta.env.VITE_API_URL ||
+  `${window.location.protocol}//${window.location.hostname}:8001`;
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -15,6 +25,8 @@ function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   // Update form fields
   const handleChange = (e) => {
@@ -30,27 +42,40 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log('Submitting enquiry:', formData);
+    if (submitting) {
+      return;
+    }
+
+    setSubmitting(true);
+    setErrorMessage('');
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/api/contact/',
-        formData
+        `${API_BASE}/api/contact/`,
+        formData,
+        { timeout: 15000 }
       );
 
       if (response.status === 201) {
-        console.log('Success! Backend responded with:', response.data);
         setSubmitted(true);
       }
     } catch (error) {
       console.error(
-        'Network communication error:',
+        'Contact form error:',
         error.response ? error.response.data : error.message
       );
 
-      alert(
-        'Something went wrong. Please check your connection to the server.'
-      );
+      if (error.response && error.response.data && error.response.data.error) {
+        // The server replied with a specific problem (e.g. invalid email)
+        setErrorMessage(error.response.data.error);
+      } else {
+        // No reply at all: server off, wrong address, or no connection
+        setErrorMessage(
+          'We could not reach the server. Please check your connection and try again.'
+        );
+      }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -232,12 +257,20 @@ function Contact() {
             />
           </div>
 
+          {/* Error message */}
+          {errorMessage && (
+            <p className="form-error" role="alert">
+              {errorMessage}
+            </p>
+          )}
+
           {/* Submit Button */}
           <button
             type="submit"
             className="submit-button"
+            disabled={submitting}
           >
-            Submit Enquiry
+            {submitting ? 'Sending...' : 'Submit Enquiry'}
           </button>
 
         </form>
@@ -247,4 +280,3 @@ function Contact() {
 }
 
 export default Contact;
-

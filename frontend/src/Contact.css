@@ -242,3 +242,17 @@
   }
 
 }
+.form-error {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 0.95rem;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

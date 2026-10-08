@@ -16,6 +16,7 @@ import TrackRecord from './pages/TrackRecord';
 import Services from './pages/Services';
 import Sectors from './pages/Sectors';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 
 import Footer from './pages/Footer';
 
@@ -160,6 +161,9 @@ function App() {
   const navVisible = useNavbarVisibility();
   const location = useLocation();
 
+  // The admin area is a standalone page: no navbar, no footer
+  const isAdmin = location.pathname.startsWith('/admin');
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -193,6 +197,7 @@ function App() {
           NAVIGATION
           =================================================== */}
 
+      {!isAdmin && (
       <nav
         className={`navbar ${showNavbar ? 'navbar--visible' : 'navbar--hidden'}`}
       >
@@ -309,6 +314,7 @@ function App() {
         </div>
 
       </nav>
+      )}
 
 
       {/* =====================================================
@@ -316,6 +322,7 @@ function App() {
           ===================================================== */}
 
       <main
+        className={isAdmin ? 'main-admin' : ''}
         style={{
           minHeight: '75vh'
         }}
@@ -335,6 +342,8 @@ function App() {
 
           <Route path="/contact" element={<Contact />} />
 
+          <Route path="/admin" element={<Admin />} />
+
         </Routes>
 
       </main>
@@ -344,7 +353,7 @@ function App() {
           FOOTER
           ===================================================== */}
 
-      <Footer />
+      {!isAdmin && <Footer />}
 
     </div>
   );

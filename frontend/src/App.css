@@ -15,6 +15,11 @@ main {
   padding-top: 48px;
 }
 
+/* The admin page has no navbar, so it needs no space for one */
+main.main-admin {
+  padding-top: 0;
+}
+
 
 /* ==========================================
    NAVIGATION BAR
