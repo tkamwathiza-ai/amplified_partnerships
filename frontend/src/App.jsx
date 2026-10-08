@@ -6,6 +6,9 @@ import {
 } from 'react-router-dom';
 
 import { useEffect, useRef, useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+import './App.css';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -17,7 +20,48 @@ import Contact from './pages/Contact';
 import Footer from './pages/Footer';
 
 import herologo from './assets/Amplify logo.png';
-import './App.css';
+
+
+/* =========================================================
+   NAVIGATION DATA
+   ========================================================= */
+
+const navGroups = [
+  {
+    label: 'Who we are',
+    links: [
+      { to: '/about', text: 'About us' },
+      { to: '/track-record', text: 'Track record' }
+    ]
+  },
+  {
+    label: 'Services',
+    links: [
+      { to: '/services', text: 'All Services' },
+      { to: '/services#research-data', text: 'Research & Data' },
+      { to: '/services#meal', text: 'Monitoring, Evaluation & Learning' },
+      { to: '/services#strategy', text: 'Strategy & Institutional Strengthening' },
+      { to: '/services#digital-systems', text: 'Digital Systems & Advisory' },
+      { to: '/services#technical-methods', text: 'Technical Methods & Tools' }
+    ]
+  },
+  {
+    label: 'Sectors',
+    links: [
+      { to: '/sectors', text: 'All Sectors' },
+      { to: '/sectors#government', text: 'Government & Public Sector' },
+      { to: '/sectors#civil-society', text: 'Civil Society, NGOs & INGOs' },
+      { to: '/sectors#agriculture', text: 'Agriculture & Rural Livelihoods' },
+      { to: '/sectors#financial-inclusion', text: 'Financial Inclusion & Cooperatives' },
+      { to: '/sectors#health', text: 'Health, SRHR & Public Health' },
+      { to: '/sectors#wash', text: 'WASH & Climate Resilience' },
+      { to: '/sectors#gender', text: 'Gender, Inclusion & Child Protection' },
+      { to: '/sectors#education', text: 'Education & Vocational Training' },
+      { to: '/sectors#faith-based', text: 'Faith-Based & Community-Led Structures' },
+      { to: '/sectors#humanitarian', text: 'Humanitarian & Early Warning' }
+    ]
+  }
+];
 
 
 /* =========================================================
@@ -55,6 +99,7 @@ function ScrollToTop() {
 
   return null;
 }
+
 
 /* =========================================================
    SHOW NAVBAR ON SCROLL UP
@@ -105,6 +150,7 @@ function useNavbarVisibility() {
   return visible;
 }
 
+
 /* =========================================================
    APP
    ========================================================= */
@@ -112,20 +158,46 @@ function useNavbarVisibility() {
 function App() {
 
   const navVisible = useNavbarVisibility();
+  const location = useLocation();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+  };
+
+
+  /* Close the mobile menu whenever the page or hash changes */
+
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname, location.hash]);
+
+
+  /* Keep the navbar visible while the mobile menu is open */
+
+  const showNavbar = navVisible || menuOpen;
+
 
   return (
+
     <div>
+
       <ScrollToTop />
 
-     <nav
-  className={`navbar ${navVisible ? 'navbar--visible' : 'navbar--hidden'}`}
-  
->
 
+      {/* ===================================================
+          NAVIGATION
+          =================================================== */}
 
-        {/* =================================================
-            BRANDING
-            ================================================= */}
+      <nav
+        className={`navbar ${showNavbar ? 'navbar--visible' : 'navbar--hidden'}`}
+      >
+
+        {/* BRANDING */}
 
         <div className="nav-branding">
 
@@ -134,6 +206,7 @@ function App() {
             <Link
               to="/"
               className="nav-item"
+              onClick={closeMenu}
             >
 
               <img
@@ -145,259 +218,93 @@ function App() {
 
           </div>
 
-
           <p className="nav-paragraph">
-            AMPLIFY PARTNERSHIPS
+            Amplify Partnerships
           </p>
 
         </div>
 
 
-        {/* =================================================
-            NAVIGATION LINKS
-            ================================================= */}
+        {/* MOBILE MENU TOGGLE */}
 
-        <div className="nav-links">
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          onClick={() => {
+            setMenuOpen((open) => !open);
+            setOpenDropdown(null);
+          }}
+        >
+          {menuOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
 
 
-          {/* =================================================
-              WHO WE ARE
-              ================================================= */}
+        {/* NAVIGATION LINKS */}
 
-          <div className="nav-dropdown">
+        <div className={`nav-links ${menuOpen ? 'nav-links--open' : ''}`}>
 
-            <button
-              className="nav-button sectors-button"
+          {navGroups.map((group) => (
+
+            <div
+              key={group.label}
+              className={`nav-dropdown ${
+                openDropdown === group.label ? 'nav-dropdown--open' : ''
+              }`}
             >
 
-              Who we are
-
-              <span className="dropdown-arrow">
-                ▾
-              </span>
-
-            </button>
-
-
-            <div className="dropdown-menu">
-
-              <Link
-                to="/about"
-                className="dropdown-item"
+              <button
+                type="button"
+                className="nav-button sectors-button"
+                aria-expanded={openDropdown === group.label}
+                onClick={() =>
+                  setOpenDropdown(
+                    openDropdown === group.label ? null : group.label
+                  )
+                }
               >
-                About us
-              </Link>
+
+                {group.label}
+
+                <span className="dropdown-arrow">
+                  ▾
+                </span>
+
+              </button>
 
 
-              <Link
-                to="/track-record"
-                className="dropdown-item"
-              >
-                Track record
-              </Link>
+              <div className="dropdown-menu">
+
+                {group.links.map((link) => (
+
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="dropdown-item"
+                    onClick={closeMenu}
+                  >
+                    {link.text}
+                  </Link>
+
+                ))}
+
+              </div>
 
             </div>
 
-          </div>
+          ))}
 
 
-          {/* =================================================
-              SERVICES
-              ================================================= */}
-
-          <div className="nav-dropdown">
-
-            <button
-              className="nav-button sectors-button"
-            >
-
-              Services
-
-              <span className="dropdown-arrow">
-                ▾
-              </span>
-
-            </button>
-
-
-            <div className="dropdown-menu">
-
-              <Link
-                to="/services"
-                className="dropdown-item"
-              >
-                All Services
-              </Link>
-
-
-              <Link
-                to="/services#research-data"
-                className="dropdown-item"
-              >
-                Research &amp; Data
-              </Link>
-
-
-              <Link
-                to="/services#meal"
-                className="dropdown-item"
-              >
-                Monitoring, Evaluation &amp; Learning
-              </Link>
-
-
-              <Link
-                to="/services#strategy"
-                className="dropdown-item"
-              >
-                Strategy &amp; Institutional Strengthening
-              </Link>
-
-
-              <Link
-                to="/services#digital-systems"
-                className="dropdown-item"
-              >
-                Digital Systems &amp; Advisory
-              </Link>
-
-
-              <Link
-                to="/services#technical-methods"
-                className="dropdown-item"
-              >
-                Technical Methods &amp; Tools
-              </Link>
-
-            </div>
-
-          </div>
-
-
-          {/* =================================================
-              SECTORS
-              ================================================= */}
-
-          <div className="nav-dropdown">
-
-            <button
-              className="nav-button sectors-button"
-            >
-
-              Sectors
-
-              <span className="dropdown-arrow">
-                ▾
-              </span>
-
-            </button>
-
-
-            <div className="dropdown-menu">
-
-
-              <Link
-                to="/sectors"
-                className="dropdown-item"
-              >
-                All Sectors
-              </Link>
-
-
-              <Link
-                to="/sectors#government"
-                className="dropdown-item"
-              >
-                Government &amp; Public Sector
-              </Link>
-
-
-              <Link
-                to="/sectors#civil-society"
-                className="dropdown-item"
-              >
-                Civil Society, NGOs &amp; INGOs
-              </Link>
-
-
-              <Link
-                to="/sectors#agriculture"
-                className="dropdown-item"
-              >
-                Agriculture &amp; Rural Livelihoods
-              </Link>
-
-
-              <Link
-                to="/sectors#financial-inclusion"
-                className="dropdown-item"
-              >
-                Financial Inclusion &amp; Cooperatives
-              </Link>
-
-
-              <Link
-                to="/sectors#health"
-                className="dropdown-item"
-              >
-                Health, SRHR &amp; Public Health
-              </Link>
-
-
-              <Link
-                to="/sectors#wash"
-                className="dropdown-item"
-              >
-                WASH &amp; Climate Resilience
-              </Link>
-
-
-              <Link
-                to="/sectors#gender"
-                className="dropdown-item"
-              >
-                Gender, Inclusion &amp; Child Protection
-              </Link>
-
-
-              <Link
-                to="/sectors#education"
-                className="dropdown-item"
-              >
-                Education &amp; Vocational Training
-              </Link>
-
-
-              <Link
-                to="/sectors#faith-based"
-                className="dropdown-item"
-              >
-                Faith-Based &amp; Community-Led Structures
-              </Link>
-
-
-              <Link
-                to="/sectors#humanitarian"
-                className="dropdown-item"
-              >
-                Humanitarian &amp; Early Warning
-              </Link>
-
-            </div>
-
-          </div>
-
-
-          {/* =================================================
-              WORK WITH US
-              ================================================= */}
+          {/* WORK WITH US */}
 
           <Link
-  to="/contact"
-  className="nav-button"
->
-  Work with us
-</Link>
+            to="/contact"
+            className="nav-button"
+            onClick={closeMenu}
+          >
+            Work with us
+          </Link>
 
         </div>
 
@@ -416,40 +323,17 @@ function App() {
 
         <Routes>
 
-          <Route
-            path="/"
-            element={<Home />}
-          />
+          <Route path="/" element={<Home />} />
 
+          <Route path="/about" element={<About />} />
 
-          <Route
-            path="/about"
-            element={<About />}
-          />
+          <Route path="/track-record" element={<TrackRecord />} />
 
+          <Route path="/services" element={<Services />} />
 
-          <Route
-            path="/track-record"
-            element={<TrackRecord />}
-          />
+          <Route path="/sectors" element={<Sectors />} />
 
-
-          <Route
-            path="/services"
-            element={<Services />}
-          />
-
-
-          <Route
-            path="/sectors"
-            element={<Sectors />}
-          />
-
-
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
+          <Route path="/contact" element={<Contact />} />
 
         </Routes>
 
