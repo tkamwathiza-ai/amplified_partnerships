@@ -1,40 +1,269 @@
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
 .about {
-  padding: 4rem 2rem;
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 4rem 2rem 6rem;
   line-height: 1.7;
+  color: #414d5f;
 }
 
 
 /* =========================================================
-   ABOUT TITLE
+   GENERAL ABOUT SECTIONS
+   ========================================================= */
+
+.about-section {
+  max-width: 1000px;
+  margin: 0 auto 5rem;
+}
+
+.about-section:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TITLES
    ========================================================= */
 
 .about-title {
-  font-size: 2.2rem;
+  margin: 0 0 0.8rem;
   color: #0f172a;
-  margin-bottom: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
-
-
-/* =========================================================
-   ABOUT SUBTITLE
-   ========================================================= */
 
 .about-subtitle {
-  font-size: 1.3rem;
+  margin: 0 0 2rem;
   color: #1e40af;
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 
 /* =========================================================
-   ABOUT PARAGRAPHS
+   PARAGRAPHS
    ========================================================= */
 
 .about p {
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.4rem;
   color: #414d5f;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   HISTORY SECTION
+   ========================================================= */
+
+.history-section {
+  padding-top: 1rem;
+}
+
+
+/* =========================================================
+   TEAM SECTION
+   ========================================================= */
+
+.team-section {
+  max-width: 1100px;
+}
+
+.team-section .section-intro {
+  max-width: 850px;
+  margin-bottom: 2.5rem;
+}
+
+
+/* =========================================================
+   TEAM TABLE
+   ========================================================= */
+
+.team-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.team-table th {
+  padding: 1.2rem 1.4rem;
+  background: #f8fafc;
+  color: #0f172a;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.team-table td {
+  padding: 1.4rem;
+  vertical-align: top;
+  color: #414d5f;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.team-table tr:last-child td {
+  border-bottom: none;
+}
+
+.team-table td:first-child {
+  width: 30%;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   STAFFING SECTION
+   ========================================================= */
+
+.staffing-section {
+  max-width: 1100px;
+}
+
+.section-intro {
+  color: #414d5f;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   STAFFING PRINCIPLES
+   ========================================================= */
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.principle-card {
+  padding: 1.8rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.principle-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.principle-card h3 {
+  margin: 0 0 0.8rem;
+  color: #374dc9;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.principle-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   QUALITY / SECURITY / GOVERNANCE SECTION
+   ========================================================= */
+
+.quality-section {
+  max-width: 1100px;
+}
+
+.quality-block {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.quality-block h3 {
+  margin: 0 0 1rem;
+  color: #0f172a;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.quality-block p {
+  margin-bottom: 1rem;
+}
+
+.quality-block ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.quality-block li {
+  margin-bottom: 0.8rem;
+  padding-left: 0.3rem;
+  color: #414d5f;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.quality-block li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   GOVERNANCE SECTION
+   ========================================================= */
+
+.governance-section {
+  max-width: 1000px;
+  padding: 2.5rem;
+  background: #3d60b4;
+  border-radius: 16px;
+}
+
+.governance-section .about-title {
+  color: #ffffff;
+}
+
+.governance-section p {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   LINKS / EMPHASIS
+   ========================================================= */
+
+.about strong {
+  color: #0f172a;
+  font-weight: 700;
 }
 
 
@@ -42,10 +271,54 @@
    MOBILE RESPONSIVENESS
    ========================================================= */
 
+@media (max-width: 900px) {
+
+  .about {
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  .about-section {
+    margin-bottom: 4rem;
+  }
+
+  .about-title {
+    font-size: 2.1rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-table-wrapper {
+    border-radius: 12px;
+  }
+
+  .quality-block {
+    padding: 1.6rem;
+  }
+
+  .governance-section {
+    padding: 2rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
 
   .about {
-    padding: 3rem 1rem;
+    padding: 2.8rem 1rem 4rem;
+  }
+
+  .about-section {
+    margin-bottom: 3.5rem;
   }
 
   .about-title {
@@ -53,10 +326,86 @@
   }
 
   .about-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
   }
 
   .about p {
-    font-size: 0.98rem;
+    font-size: 0.96rem;
+    line-height: 1.75;
+  }
+
+  .principles-grid {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .principle-card {
+    padding: 1.4rem;
+  }
+  .principle-card span {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: rgba(31, 77, 217, 0.08);
+}
+
+  .principle-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .principle-card p {
+    font-size: 0.94rem;
+  }
+
+  .quality-block {
+    margin-top: 1.5rem;
+    padding: 1.4rem;
+    border-radius: 12px;
+  }
+
+  .quality-block h3 {
+    font-size: 1.1rem;
+  }
+
+  .quality-block li {
+    font-size: 0.94rem;
+  }
+
+  .governance-section {
+    padding: 1.6rem;
+    border-radius: 13px;
+  }
+
+  .governance-section .about-title {
+    font-size: 1.7rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .about {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .about-title {
+    font-size: 1.65rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .governance-section {
+    padding: 1.3rem;
   }
 }

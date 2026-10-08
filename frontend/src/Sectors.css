@@ -1,0 +1,307 @@
+/* =========================================================
+   SECTORS PAGE
+   ========================================================= */
+
+.sectors {
+  background: #ffffff;
+  color: #1e293b;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.sectors-hero {
+  padding: 7rem 2rem 6rem;
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef4ff 55%,
+      #ffffff 100%
+    );
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sectors-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectors-eyebrow,
+.section-label {
+  margin-bottom: 1rem;
+  color: #374dc9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sectors-hero h1 {
+  max-width: 900px;
+  margin: 0 0 1.5rem;
+  color: #0f172a;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.sectors-hero p:not(.sectors-eyebrow) {
+  max-width: 800px;
+  margin: 0;
+  color: #475569;
+  font-size: 1.2rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.sectors-introduction {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+}
+
+.sectors-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.sectors-heading > span {
+  padding-top: 0.5rem;
+  color: #374dc9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.sectors-heading h2 {
+  max-width: 800px;
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.sectors-intro-text {
+  max-width: 850px;
+  margin: 2rem 0 0 4rem;
+  color: #475569;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SECTOR GRID
+   ========================================================= */
+
+.sector-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 7rem;
+}
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.sector-card {
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.sector-card:hover {
+  transform: translateY(-5px);
+  border-color: #cbd5e1;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.sector-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.sector-index {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.sector-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #eaf1ff;
+  color: #374dc9;
+}
+
+.sector-card h3 {
+  max-width: 480px;
+  margin: 0 0 0.9rem;
+  color: #0f172a;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.sector-card p {
+  max-width: 550px;
+  margin: 0;
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CROSS-SECTOR CAPABILITY
+   ========================================================= */
+
+.cross-sector {
+  padding: 7rem 2rem;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.cross-sector-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cross-sector .section-label {
+  color: #93a8ff;
+}
+
+.cross-sector h2 {
+  max-width: 850px;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.cross-sector p:not(.section-label) {
+  max-width: 850px;
+  margin-bottom: 2rem;
+  color: #cbd5e1;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.sectors-services-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.sectors-services-link:hover {
+  background: #eef2ff;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESOURCING
+   ========================================================= */
+
+.resourcing {
+  padding: 7rem 2rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.resourcing-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resourcing h2 {
+  max-width: 800px;
+  margin: 0 0 1.5rem;
+  color: #0f172a;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+.resourcing p:not(.section-label) {
+  max-width: 850px;
+  margin: 0;
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .sectors-hero {
+    padding: 5rem 1.2rem 4rem;
+  }
+
+  .sectors-introduction,
+  .sector-list {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .sectors-heading {
+    gap: 1rem;
+  }
+
+  .sectors-intro-text {
+    margin-left: 0;
+  }
+
+  .sector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cross-sector,
+  .resourcing {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectors-hero h1 {
+    font-size: 3rem;
+  }
+
+  .sector-card {
+    padding: 1.5rem;
+  }
+}

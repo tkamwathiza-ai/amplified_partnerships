@@ -1,293 +1,231 @@
-/* ============================================
-   ANIMATIONS & TRANSITIONS
-   ============================================ */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* ==========================================
+   APP.CSS
+   Styles for everything rendered in App.jsx:
+   the navbar, its dropdowns, and the main wrapper.
+   ========================================== */
 
-@keyframes slideInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
+/* ==========================================
+   MAIN CONTENT WRAPPER
+   ========================================== */
 
-/* ============================================
-   LAYOUT & CONTAINERS
-   ============================================ */
-
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  animation: fadeIn 0.4s ease-out;
-}
-
-@media (max-width: 768px) {
-  .page-container {
-    padding: 2rem 1rem;
-  }
+/* Space for the fixed navbar (adjust if the navbar height changes) */
+main {
+  padding-top: 48px;
 }
 
 
+/* ==========================================
+   NAVIGATION BAR
+   ========================================== */
 
-/* ============================================
-   TYPOGRAPHY & HEADINGS
-   ============================================ */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.025em;
-  animation: slideInUp 0.6s ease-out;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 3px 20px;
+
+  /* Fixed position + hide/show on scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+
+  /* Mostly opaque so content underneath doesn't hurt readability */
+  background-color: rgba(255, 255, 253, 0.92);
+  backdrop-filter: blur(10px);
+
+  box-sizing: border-box;
 }
 
-.section-subtitle {
-  font-size: 1.1rem;
-  color: #475569;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  animation: slideInUp 0.6s ease-out 0.1s both;
+.navbar--visible {
+  transform: translateY(0);
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  line-height: 1.1;
-  font-weight: 800;
-  color: #0f172a;
-  animation: slideInUp 0.6s ease-out;
+.navbar--hidden {
+  transform: translateY(-100%);
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
+.nav-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
-.btn-primary {
-  background-color: #0f172a;
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+.nav-logo img {
+  border-radius: 15px;
+  width: 90px;
+  height: 40px;
+  object-fit: contain;
+  margin: 4px 0;
+}
+
+.nav-paragraph {
+  color: #0c1c4f;
   font-weight: 600;
+  font-size: 12px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 17px;
+}
+
+.nav-item {
+  color: white;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-primary:hover {
-  background-color: #1e293b;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.15);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  color: #0f172a;
+  background-color: #626968;
+  border: none;
+  border-radius: 7px;
+  height: 30px;
+  width: 120px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
   text-decoration: none;
-  font-weight: 600;
-  background-color: transparent;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #1f4dd9;
+  border-color: #1f4dd9;
+  box-shadow: 0 8px 20px #1f4dd9;
+  transform: scale(1.05);
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.btn-secondary:hover {
-  background-color: #f8fafc;
-  border-color: #94a3b8;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transform: translateY(-1px);
+.nav-button:active {
+  transform: scale(1.08);
 }
 
-/* ============================================
-   CARDS & COMPONENTS
-   ============================================ */
-.service-card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: slideInUp 0.6s ease-out both;
+.nav-dropdown {
+  position: relative;
 }
 
-.service-card:nth-child(1) { animation-delay: 0s; }
-.service-card:nth-child(2) { animation-delay: 0.1s; }
-.service-card:nth-child(3) { animation-delay: 0.2s; }
-.service-card:nth-child(4) { animation-delay: 0.3s; }
 
-.service-card:hover {
-  border-color: #0f172a;
-  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1);
-  transform: translateY(-8px);
-}
+/* ==========================================
+   SECTORS BUTTON
+   ========================================== */
 
-.service-card h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
-}
-
-.service-card p {
-  color: #475569;
-  line-height: 1.6;
-  font-size: 0.98rem;
-}
-
-/* ============================================
-   GRIDS
-   ============================================ */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2rem;
-  padding-top: 4rem;
-  border-top: 2px solid #e2e8f0;
-}
-
-@media (max-width: 768px) {
-  .value-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-/* ============================================
-   VALUE PROPOSITIONS
-   ============================================ */
-.value-item {
-  animation: slideInUp 0.6s ease-out both;
-}
-
-.value-item:nth-child(1) { animation-delay: 0.2s; }
-.value-item:nth-child(2) { animation-delay: 0.3s; }
-.value-item:nth-child(3) { animation-delay: 0.4s; }
-
-.value-icon {
-  color: #0f172a;
-  margin-bottom: 0.75rem;
-  transition: transform 0.3s ease;
-}
-
-.value-item:hover .value-icon {
-  transform: scale(1.1);
-}
-
-.value-item h4 {
-  font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.value-item p {
-  color: #64748b;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* Form Controls with Smooth Focus Indicators */
-.form-group {
+.sectors-button {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
 }
 
-.form-label {
-  font-weight: 600;
-  color: #0f172a;
-  font-size: 0.95rem;
+.nav-button-sectors-text {
+  color: #ffffff;
 }
 
-.form-input, .form-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #cbd5e1; /* Slate 300 */
-  font-size: 1rem;
+
+/* ==========================================
+   DROPDOWN ARROW
+   ========================================== */
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.25s ease;
+  color: #ffffff;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* ==========================================
+   DROPDOWN MENU
+   ========================================== */
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform:
+    translateX(-50%)
+    translateY(-8px);
+  min-width: 280px;
   background-color: #ffffff;
-  box-sizing: border-box;
-  transition: all 0.2s ease;
-}
-
-.form-input:focus, .form-textarea:focus {
-  outline: none;
-  border-color: #0f172a;
-  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
-}
-
-/* Interactive Services Grid Layout */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.service-card {
-  padding: 2.5rem 2rem;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  background-color: #ffffff;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 1000;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  border-color: #cbd5e1;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform:
+    translateX(-50%)
+    translateY(0);
 }
 
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-  .page-container {
-    padding: 2.5rem 1.25rem;
+
+/* ==========================================
+   DROPDOWN LINKS
+   ========================================== */
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #334155;
+  text-decoration: none;
+  font-size: 0.92rem;
+  border-radius: 6px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #eef2ff;
+  color: #374dc9;
+}
+
+
+/* ==========================================
+   SMALL MOBILE DEVICES
+   ========================================== */
+
+@media (max-width: 480px) {
+
+  .nav-links {
+    gap: 10px;
+    font-size: 14px;
   }
-  .section-title {
-    font-size: 2rem;
+
+  .nav-logo img {
+    width: 70px;
+    height: 35px;
   }
+
+  .nav-paragraph {
+    font-size: 16px;
+  }
+
 }

@@ -1,0 +1,511 @@
+/* =========================================================
+   TRACK RECORD PAGE
+   ========================================================= */
+
+.track-record {
+  background: #ffffff;
+  color: #1e293b;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.track-record-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef4ff 55%,
+      #ffffff 100%
+    );
+
+  border-bottom: 1px solid #e2e8f0;
+
+  padding: 7rem 2rem 6rem;
+}
+
+.track-record-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.track-record-eyebrow {
+  margin: 0 0 1.25rem;
+
+  color: #374dc9;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.track-record-hero h1 {
+  max-width: 900px;
+
+  margin: 0 0 1.5rem;
+
+  color: #0f172a;
+
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  font-weight: 700;
+  line-height: 0.98;
+
+  letter-spacing: -0.04em;
+}
+
+.track-record-hero-text {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 1.2rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.track-record-introduction {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 6rem 2rem 4rem;
+}
+
+.track-record-section-heading {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 1.5rem;
+
+  margin-bottom: 2rem;
+}
+
+.track-record-section-heading > span {
+  flex-shrink: 0;
+
+  color: #374dc9;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  padding-top: 0.5rem;
+}
+
+.track-record-section-heading > div {
+  min-width: 0;
+}
+
+.track-record-section-heading .section-label {
+  margin-bottom: 0.6rem;
+}
+
+.track-record-section-heading h2 {
+  max-width: 950px;
+
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.025em;
+}
+
+.track-record-introduction > p {
+  max-width: 850px;
+
+  margin: 0 0 1.2rem 4rem;
+
+  color: #475569;
+
+  font-size: 1.08rem;
+
+  line-height: 1.8;
+}
+
+.track-record-introduction > p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   RECORD SECTIONS
+   ========================================================= */
+
+.track-record-section {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 4rem 2rem 7rem;
+}
+
+.track-record-section-light {
+  max-width: none;
+
+  background: #f8fafc;
+
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+
+  padding-left: max(2rem, calc((100vw - 1200px) / 2));
+  padding-right: max(2rem, calc((100vw - 1200px) / 2));
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.section-label {
+  margin: 0 0 1rem;
+
+  color: #374dc9;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TRACK RECORD TABLE
+   ========================================================= */
+
+.track-record-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.track-record-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 950px;
+}
+
+.track-record-table th,
+.track-record-table td {
+  padding: 1.25rem 1.3rem;
+
+  text-align: left;
+  vertical-align: top;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.track-record-table th {
+  background: #f8fafc;
+
+  color: #0f172a;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.track-record-table td {
+  color: #475569;
+
+  font-size: 0.94rem;
+
+  line-height: 1.65;
+}
+
+.track-record-table tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   TABLE COLUMNS
+   ========================================================= */
+
+.track-period {
+  width: 17%;
+
+  color: #0f172a !important;
+
+  font-weight: 700;
+}
+
+.track-client {
+  width: 39%;
+}
+
+.track-value {
+  width: 15%;
+
+  color: #0f172a !important;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.track-role {
+  width: 29%;
+}
+
+
+/* =========================================================
+   TABLE HOVER
+   ========================================================= */
+
+.track-record-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.track-record-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+
+/* =========================================================
+   REFERENCES
+   ========================================================= */
+
+.track-record-references {
+  padding: 6rem 2rem;
+
+  background: #0f172a;
+
+  color: #ffffff;
+}
+
+.track-record-references > div {
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+.track-record-references .section-label {
+  color: #93a8ff;
+}
+
+.track-record-references h2 {
+  max-width: 800px;
+
+  margin: 0 0 1.2rem;
+
+  color: #ffffff;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.025em;
+}
+
+.track-record-references p:last-child {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HASH TARGET
+   ========================================================= */
+
+#evaluations,
+#research,
+#strategy {
+  scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .track-record-hero {
+    padding: 5.5rem 1.5rem 5rem;
+  }
+
+  .track-record-introduction {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .track-record-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .track-record-section-light {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .track-record-introduction > p {
+    margin-left: 0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .track-record-hero {
+    padding: 5rem 1.2rem 4rem;
+  }
+
+  .track-record-hero h1 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+
+    line-height: 1;
+  }
+
+  .track-record-hero-text {
+    font-size: 1rem;
+
+    line-height: 1.7;
+  }
+
+  .track-record-introduction {
+    padding: 4rem 1.2rem 3rem;
+  }
+
+  .track-record-section {
+    padding: 3rem 1.2rem 5rem;
+  }
+
+  .track-record-section-light {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .track-record-section-heading {
+    gap: 1rem;
+  }
+
+  .track-record-section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .track-record-introduction > p {
+    font-size: 1rem;
+  }
+
+  .track-record-table-wrapper {
+    border-radius: 10px;
+  }
+
+  .track-record-table {
+    min-width: 850px;
+  }
+
+  .track-record-table th,
+  .track-record-table td {
+    padding: 1rem;
+  }
+
+  .track-record-references {
+    padding: 4rem 1.2rem;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .track-record-hero {
+    padding: 4rem 1rem 3.5rem;
+  }
+
+  .track-record-hero h1 {
+    font-size: clamp(2.4rem, 13vw, 3.5rem);
+  }
+
+  .track-record-introduction {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .track-record-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .track-record-section-light {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .track-record-section-heading {
+    gap: 0.8rem;
+  }
+
+  .track-record-section-heading > span {
+    font-size: 0.7rem;
+  }
+
+  .track-record-section-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  .track-record-references {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

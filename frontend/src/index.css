@@ -24,78 +24,6 @@ body {
 
 
 /* ==========================================
-   NAVIGATION BAR
-   ========================================== */
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3px 20px;
-  background-color: #eaff0079;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-}
-
-.nav-branding {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo img {
-  border-radius: 15px;
-  width: 90px;
-  height: 40px;
-  object-fit: contain;
-  margin: 4px 0;
-}
-
-.nav-paragraph {
-  color: #1f4dd9;
-  font-weight: 900;
-  font-size: 20px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  font-size: 17px;
-}
-
-.nav-item {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.nav-button {
-  background-color: #818d8c;
-  border: none;
-  border-radius: 7px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  height: 30px;
-  width: 100px;
-}
-
-.nav-button:hover {
-  background-color: #1f4dd9;
-  border-color: #1f4dd9;
-  box-shadow: 0 8px 20px #1f4dd9;
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-.nav-button:active {
-  transform: scale(1.08);
-}
-
-
-/* ==========================================
    HERO SECTION
    ========================================== */
 
@@ -115,10 +43,6 @@ body {
    HERO IMAGE SLIDER
    ========================================== */
 
-/* ==========================================
-   HERO IMAGE SLIDER
-   ========================================== */
-
 .hero-slider {
   position: absolute;
   inset: 0;
@@ -129,84 +53,104 @@ body {
   z-index: 0;
 }
 
-.hero-slide-img {
-  position: absolute;
-  inset: 0;
 
-  width: 100%;
+/* ==========================================
+   SLIDE TRACK
+   ========================================== */
+
+.hero-slide-track {
+  display: flex;
+  width: 800%;
   height: 100%;
+  animation: heroSlideTrack 20s infinite;
+}
 
+
+/* ==========================================
+   INDIVIDUAL SLIDES
+   ========================================== */
+
+.hero-slide-img {
+  flex: 0 0 12.5%;
+  width: 12.5%;
+  height: 100%;
   object-fit: cover;
-
-  opacity: 0;
-  transform: scale(1);
-
-  animation: heroZoomFade 20s infinite;
+  display: block;
 }
 
 
 /* ==========================================
-   IMAGE TIMING
+   HORIZONTAL SLIDE ANIMATION
    ========================================== */
 
-.hero-slide-img:nth-child(1) {
-  animation-delay: 0s;
-}
+@keyframes heroSlideTrack {
 
-.hero-slide-img:nth-child(2) {
-  animation-delay: 5s;
-}
-
-.hero-slide-img:nth-child(3) {
-  animation-delay: 10s;
-}
-
-.hero-slide-img:nth-child(4) {
-  animation-delay: 20s;
-}
-
-
-/* ==========================================
-   ZOOM → WHITE FADE → NEXT IMAGE
-   ========================================== */
-
-@keyframes heroZoomFade {
-
-  /* Start */
+  /* IMAGE 1 */
   0% {
-    opacity: 0;
-    transform: scale(1.10);
+    transform: translateX(0);
   }
 
-  /* Fade image in */
-  2% {
-    opacity: 1;
+  /* Hold */
+  18% {
+    transform: translateX(0);
   }
 
-  /* Slowly zoom */
+  /* QUICK SWITCH */
   20% {
-    opacity: 1;
-    
+    transform: translateX(-12.5%);
   }
 
-  /* Begin fading to white */
-  23% {
-    opacity: 0.5;
-    
+  /* IMAGE 2 */
+  20% {
+    transform: translateX(-12.5%);
   }
 
-  /* Completely gone */
-  25% {
-    opacity: 0;
-  
+  /* Hold */
+  43% {
+    transform: translateX(-12.5%);
   }
 
-  /* Stay hidden */
+  /* QUICK SWITCH */
+  45% {
+    transform: translateX(-25%);
+  }
+
+  /* IMAGE 3 */
+  45% {
+    transform: translateX(-25%);
+  }
+
+  /* Hold */
+  68% {
+    transform: translateX(-25%);
+  }
+
+  /* QUICK SWITCH */
+  70% {
+    transform: translateX(-37.5%);
+  }
+
+  /* IMAGE 4 */
+  70% {
+    transform: translateX(-37.5%);
+  }
+
+  /* Hold */
+  93% {
+    transform: translateX(-37.5%);
+  }
+
+  /* QUICK SWITCH → IMAGE 1 */
+  95% {
+    transform: translateX(-50%);
+  }
+
+  /* Hold IMAGE 1 */
   100% {
-    opacity: 0;
-    transform: scale(1.0);
+    transform: translateX(-50%);
   }
 }
+
 
 /* ==========================================
    HERO CONTENT CARD
@@ -215,34 +159,23 @@ body {
 .hero-content-card {
   position: relative;
   z-index: 2;
-
   padding: 3rem;
-
   max-width: 600px;
-
   margin: 2rem 5rem;
-
   border-radius: 20px;
-
   background-color: rgba(81, 81, 82, 0.316);
-
   backdrop-filter: blur(10px);
 }
 
 .hero-content-card h1 {
   color: white;
-
-  text-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content-card p {
   color: rgb(255, 255, 255);
-
   font-weight: 600;
-
-  text-shadow:
-    2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -252,23 +185,16 @@ body {
 
 .section-title {
   font-size: 2rem;
-
   color: rgb(22, 22, 22);
-
   margin-bottom: 1.5rem;
-
   font-weight: 700;
-
   position: relative;
 }
 
 .hero-title {
   color: #14161b;
-
   font-size: 3.5rem;
-
   line-height: 1;
-
   margin: 0;
 }
 
@@ -279,11 +205,8 @@ body {
 
 .hero-description {
   color: #475569;
-
   font-size: 1.2rem;
-
   line-height: 1.4;
-
   margin: 1.5rem 0 2.5rem;
 }
 
@@ -294,9 +217,7 @@ body {
 
 .hero-cta-group {
   display: flex;
-
   gap: 1rem;
-
   flex-wrap: wrap;
 }
 
@@ -306,21 +227,15 @@ body {
 
 .hero-btn-icon-wrapper {
   display: inline-block;
-
   margin-top: 2px;
 }
 
 .hero-btn-secondary {
   margin-top: 0.8rem;
-
   background-color: #1f4dd9;
-
   border-radius: 6px;
-
   padding: 0.75rem 1.5rem;
-
   cursor: pointer;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -328,15 +243,12 @@ body {
 
 .hero-btn-secondary:hover {
   box-shadow: 0 8px 20px #000000;
-
   transform: scale(1.05);
 }
 
 .hero-secondary-link {
   color: #ffffff;
-
   text-decoration: none;
-
   font-weight: 600;
 }
 
@@ -347,11 +259,8 @@ body {
 
 .hero-banner {
   background-color: #0f172a;
-
   color: #ffffff;
-
   padding: 5rem 2rem;
-
   text-align: center;
 }
 
@@ -362,35 +271,23 @@ body {
 
 .grid-layout {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(300px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-
   margin-top: 2rem;
 }
 
 .custom-card {
   background: #ffffff;
-
   padding: 2rem;
-
   border-radius: 8px;
-
   border: 1px solid #e2e8f0;
-
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .custom-card h3 {
   color: rgb(15, 163, 237);
-
   margin-bottom: 0.75rem;
-
   font-size: 1.25rem;
-
   z-index: 2;
 }
 
@@ -401,15 +298,10 @@ body {
 
 .overlay-hero {
   position: relative;
-
   display: flex;
-
   gap: 25px;
-
   width: 90%;
-
   min-height: 350px;
-
   margin: 60px auto;
 }
 
@@ -417,21 +309,13 @@ body {
 .hero-right,
 .bottom-left-hero {
   position: relative;
-
   display: flex;
-
   flex: 1;
-
   overflow: hidden;
-
   flex-direction: column;
-
   justify-content: flex-end;
-
   padding: 30px;
-
   border-radius: 20px;
-
   background-color: #e7ebee;
 }
 
@@ -444,34 +328,22 @@ body {
 .image-container,
 .img-container {
   position: absolute;
-
   inset: 0;
-
   width: 100%;
-
   height: 100%;
 }
 
 .small-icon,
 .bottom-left-hero .sub-image {
   position: absolute;
-
   top: 30px;
-
   left: 30px;
-
   width: 45px;
-
   height: 48px;
-
   object-fit: contain;
-
   background-color: #ffffff;
-
   border-radius: 7px;
-
   padding: 3px;
-
   z-index: 2;
 }
 
@@ -484,17 +356,11 @@ body {
 .hero-right h2,
 .bottom-left-hero h3 {
   position: relative;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 20px;
-
   font-weight: 800;
-
   color: #ffffff;
-
   margin-bottom: 8px;
-
   z-index: 2;
 }
 
@@ -502,9 +368,7 @@ body {
 .hero-right p,
 .bottom-left-hero p {
   position: relative;
-
   color: #ffffff;
-
   font-family:
     system-ui,
     -apple-system,
@@ -512,11 +376,8 @@ body {
     'Segoe UI',
     Roboto,
     sans-serif;
-
   font-size: 15px;
-
   line-height: 1.5;
-
   z-index: 2;
 }
 
@@ -527,15 +388,10 @@ body {
 
 .overlay-content {
   position: absolute;
-
   inset: 0;
-
   width: 100%;
-
   height: 100%;
-
   z-index: 1;
-
   background:
     linear-gradient(
       rgba(17, 87, 237, 0.92),
@@ -550,37 +406,23 @@ body {
 
 .mission-services {
   position: relative;
-
   display: flex;
-
   gap: 65px;
-
   width: 47%;
-
   height: 350px;
-
   margin-top: 5px;
-
   margin-bottom: 65px;
 }
 
 .services-hero {
   position: relative;
-
   width: 100%;
-
   display: flex;
-
   flex: 1;
-
   overflow: hidden;
-
   flex-direction: column;
-
   justify-content: center;
-
   border-radius: 20px;
-
   align-items: center;
 }
 
@@ -591,57 +433,38 @@ body {
 
 .services-hero h5 {
   position: absolute;
-
   font-size: 67px;
-
   color: rgb(15, 163, 237);
-
   left: 16px;
-
   margin-bottom: 20px;
-
   bottom: 125px;
-
   z-index: 2;
-
-  transition:
-    transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .services-hero h5:hover {
   transform: translateY(-7px);
-
   cursor: pointer;
-
   color: white;
 }
 
 .services-hero h4 {
   position: absolute;
-
   font-family:
     'Times New Roman',
     Times,
     serif;
-
   font-size: 20px;
-
   font-weight: bolder;
-
   color: rgb(15, 163, 237);
-
   display: block;
-
   left: 19px;
-
   bottom: 114px;
-
   z-index: 2;
 }
 
 .services-hero p {
   position: absolute;
-
   font-family:
     system-ui,
     -apple-system,
@@ -654,61 +477,40 @@ body {
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
-
   font-size: 17px;
-
   font-weight: bolder;
-
   color: rgb(221, 220, 220);
-
   display: block;
-
   left: 19px;
-
   bottom: 87px;
-
   z-index: 2;
-
-  transition:
-    transform 0.45s;
+  transition: transform 0.45s;
 }
 
 .services-hero p:hover {
   color: rgb(128, 128, 128);
-
   cursor: pointer;
-
   transform: translateX(11px);
 }
 
 .services-hero h6 {
   position: absolute;
-
   font-size: 65px;
-
   color: rgb(207, 207, 207);
-
   right: 225px;
-
   top: 65px;
-
   z-index: 2;
-
-  transition:
-    transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .services-hero h6:hover {
   transform: translateY(-7px);
-
   cursor: pointer;
-
   color: white;
 }
 
 .services-hero p2 {
   position: absolute;
-
   font-family:
     system-ui,
     -apple-system,
@@ -721,18 +523,376 @@ body {
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
-
   font-size: 14px;
-
   color: rgb(207, 207, 207);
-
   font-weight: bold;
-
   right: 9px;
-
   bottom: 95px;
-
   z-index: 2;
+}
+
+
+/* ==========================================
+   MISSION & VISION SECTION
+   ========================================== */
+
+.mission-vision-section {
+  width: 90%;
+  max-width: 1500px;
+  margin: 100px auto;
+}
+
+
+/* ==========================================
+   SECTION INTRODUCTION
+   ========================================== */
+
+.section-intro {
+  max-width: 800px;
+  margin-bottom: 55px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #1f4dd9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-intro h2 {
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.section-intro h2 span {
+  color: #1f4dd9;
+}
+
+.section-intro > p {
+  max-width: 700px;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   MISSION / VISION CARDS
+   ========================================== */
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.mission-card,
+.vision-card {
+  position: relative;
+  padding: 45px;
+  min-height: 360px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+}
+
+.card-number {
+  margin-bottom: 45px;
+  color: #1f4dd9;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.mission-card h3,
+.vision-card h3 {
+  margin-bottom: 18px;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.mission-card p,
+.vision-card p {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   VALUES SECTION
+   ========================================== */
+
+.values-section {
+  width: 100%;
+  padding: 100px 5%;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.values-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  max-width: 1500px;
+  margin: 0 auto 60px;
+}
+
+.values-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.values-header h2 span {
+  color: #4d7cff;
+}
+
+.values-header p {
+  max-width: 500px;
+  margin: 0;
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   VALUES GRID
+   ========================================== */
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1500px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.value-card {
+  min-height: 360px;
+  padding: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #0f172a;
+  transition: background-color 0.3s ease;
+}
+
+.value-card:hover {
+  background-color: #17233a;
+}
+
+.value-card > span {
+  display: block;
+  margin-bottom: 70px;
+  color: #4d7cff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.value-card h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.value-card p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* ==========================================
+   SYSTEMS ENGAGEMENT SECTION
+   ========================================== */
+
+.systems-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 110px 6%;
+  background-color: #f8fafc;
+}
+
+.systems-content {
+  max-width: 700px;
+}
+
+.systems-content h2 {
+  margin-bottom: 25px;
+  color: #0f172a;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.systems-content h2 span {
+  color: #1f4dd9;
+}
+
+.systems-content > p {
+  max-width: 600px;
+  margin-bottom: 30px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.systems-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1f4dd9;
+  text-decoration: none;
+  font-weight: 700;
+  transition: gap 0.25s ease;
+}
+
+.systems-link:hover {
+  gap: 14px;
+}
+
+
+/* ==========================================
+   SYSTEMS POINTS
+   ========================================== */
+
+.systems-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.system-point {
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+.system-point span {
+  display: block;
+  margin-bottom: 35px;
+  color: #1f4dd9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.system-point strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.system-point p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* ==========================================
+   HOMEPAGE FINAL CTA
+   ========================================== */
+
+.homepage-cta {
+  padding: 110px 6%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.homepage-cta h2 {
+  margin-bottom: 25px;
+  color: #0f172a;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.homepage-cta h2 span {
+  color: #1f4dd9;
+}
+
+.homepage-cta > p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.homepage-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 7px;
+  background-color: #1f4dd9;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.homepage-cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(31, 77, 217, 0.35);
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .systems-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
 }
 
 
@@ -742,17 +902,16 @@ body {
 
 @media (max-width: 768px) {
 
+  /* HERO */
+
   .hero-section {
     min-height: 600px;
-
     padding: 2rem 0;
   }
 
   .hero-content-card {
     margin: 2rem 1.5rem;
-
     padding: 2rem;
-
     max-width: calc(100% - 3rem);
   }
 
@@ -764,9 +923,11 @@ body {
     font-size: 1rem;
   }
 
+
+  /* OVERLAY HERO */
+
   .overlay-hero {
     flex-direction: column;
-
     width: 90%;
   }
 
@@ -776,7 +937,97 @@ body {
     min-height: 350px;
   }
 
+
+  /* SERVICES */
+
   .mission-services {
     width: 90%;
   }
+
+
+  /* MISSION / VISION */
+
+  .mission-vision-section {
+    width: 90%;
+    margin: 70px auto;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 30px;
+    min-height: auto;
+  }
+
+
+  /* VALUES */
+
+  .values-section {
+    padding: 70px 5%;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .value-card > span {
+    margin-bottom: 35px;
+  }
+
+
+  /* SYSTEMS */
+
+  .systems-section {
+    padding: 70px 6%;
+  }
+
+  .systems-points {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* CTA */
+
+  .homepage-cta {
+    padding: 70px 6%;
+  }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE DEVICES
+   ========================================== */
+
+@media (max-width: 480px) {
+
+  .hero-content-card {
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 25px;
+  }
+
+  .section-intro h2,
+  .values-header h2,
+  .systems-content h2,
+  .homepage-cta h2 {
+    font-size: 2.5rem;
+  }
+
 }
