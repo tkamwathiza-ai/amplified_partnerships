@@ -228,7 +228,7 @@ function Services() {
       {/* INTRO */}
       <section className="services-introduction">
         <div className="services-section-heading">
-          <span>01</span>
+          
           <h2>Our Consulting Practices</h2>
         </div>
 
@@ -286,7 +286,7 @@ function Services() {
       <section className="further-practices">
 
         <div className="services-section-heading">
-          <span>02</span>
+          
           <div>
             <p className="section-label">ADDITIONAL PRACTICES</p>
             <h2>Further Practice Areas</h2>
@@ -324,7 +324,7 @@ function Services() {
         id="technical-methods"
       >
         <div className="services-section-heading">
-          <span>03</span>
+          
           <div>
             <p className="section-label">DELIVERY CAPABILITY</p>
             <h2>Technical Methods, Tools & Standards</h2>
